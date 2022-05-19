@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "gurume",
+  "version": "${version}",
+  "name": "Gurume",
+  "description": "A mod for weeb gourmets.",
+  "authors": [
+    "Andrew Huang"
+  ],
+  "contact": {
+    "homepage": "https://github.com/andyroiiid/gurume",
+    "issues": "https://github.com/andyroiiid/gurume/issues",
+    "sources": "https://github.com/andyroiiid/gurume"
+  },
+  "license": "MIT",
+  "icon": "assets/gurume/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "io.github.andyroiiid.gurume.Gurume"
+      }
+    ],
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "io.github.andyroiiid.gurume.GurumeClient"
+      }
+    ]
+  },
+  "mixins": [
+    "gurume.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.5",
+    "fabric": "*",
+    "fabric-language-kotlin": "1.7.4+kotlin.1.6.21",
+    "minecraft": "1.16.5",
+    "java": ">=17"
+  }
+}

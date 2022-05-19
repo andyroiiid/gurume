@@ -1,5 +1,6 @@
 {
   "block.gurume.rice_crop": "水稻",
   "item.gurume.rice": "水稻",
-  "item.gurume.rice_seeds": "水稻种子"
+  "item.gurume.rice_seeds": "水稻种子",
+  "item.gurume.cooked_rice": "米饭"
 }

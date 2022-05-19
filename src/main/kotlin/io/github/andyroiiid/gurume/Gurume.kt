@@ -3,6 +3,7 @@ package io.github.andyroiiid.gurume
 import io.github.andyroiiid.gurume.block.RiceCropBlock
 import net.fabricmc.api.ModInitializer
 import net.minecraft.block.AbstractBlock
+import net.minecraft.block.ComposterBlock
 import net.minecraft.block.Material
 import net.minecraft.item.AliasedBlockItem
 import net.minecraft.item.Item
@@ -38,11 +39,20 @@ object Gurume : ModInitializer {
     )
 
     override fun onInitialize() {
-        Logger.info("Registering items")
+        Logger.info("Registering items...")
 
         Registry.register(Registry.BLOCK, Identifier("gurume", "rice_crop"), RICE_CROP_BLOCK)
 
         Registry.register(Registry.ITEM, Identifier("gurume", "rice_seeds"), RICE_SEEDS_ITEM)
         Registry.register(Registry.ITEM, Identifier("gurume", "rice"), RICE_ITEM)
+
+        Logger.info("Registering compostable items...")
+
+        registerCompostableItem(0.3f, RICE_SEEDS_ITEM)
+        registerCompostableItem(0.65f, RICE_ITEM)
+    }
+
+    private fun registerCompostableItem(levelIncreaseChance: Float, item: Item) {
+        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(item, levelIncreaseChance)
     }
 }
